@@ -22,7 +22,7 @@ p {
     line-height: 1.5;
 }
 
-header {
+header {
     position: relative;
     width: 100%;
     min-height: auto;
@@ -36,12 +36,14 @@ header {
     -o-background-size: cover;
 }
 
+
 header .header-content {
     position: relative;
     width: 100%;
     padding: 100px 15px 70px;
     text-align: center;
 }
+
 
 header .header-content .header-content-inner h1 {
     margin-top: 0;
@@ -50,12 +52,14 @@ header .header-content .header-content-inner h1 {
     font-weight: 300;
 }
 
+
 header .header-content .header-content-inner p {
     margin-bottom: 50px;
     font-size: 16px;
     font-weight: 300;
     color: rgba(255,255,255,.7);
 }
+
 
 @media(min-width:768px) {
     header {
@@ -88,6 +92,8 @@ header .header-content .header-content-inner p {
         font-size: 18px;
     }
 }
+
+
 
 .section-heading {
     margin-top: 0;
