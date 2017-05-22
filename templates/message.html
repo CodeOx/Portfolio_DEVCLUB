@@ -41,13 +41,46 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                	<h2 class="section-header">Superior Quality</h2>
-                	<p class="lead text-light">Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
-                	<a href="#" class="btn btn-default btn-lg">Test It</a>
+                	<form name = "form" action = "{% url "message" %}" method = "POST" >{% csrf_token %}	
+			<table><tr><td style="vertical-align: top;">
+			<label for="id_name"><p class="lead text-light">Name:&nbsp;&nbsp;&nbsp;</p></label></td><td style="vertical-align: top;"><input type="text" name="name" required id="id_name" maxlength="30" style="color:black; width:100%" /></td></tr>
+			<br>
+
+			<tr><td style="vertical-align: top;">
+			<label for="id_subject"><p class="lead text-light">Subject:&nbsp;&nbsp;&nbsp;</p></label></td><td style="vertical-align: top;"><input type="text" name="subject" required id="id_subject" maxlength="100" style="color:black; width:100%" /></td></tr>
+			<br>
+			<tr><td style="vertical-align: top;">
+			<label for="id_email"><p class="lead text-light">Email:&nbsp;&nbsp;&nbsp;</p></label></td><td style="vertical-align: top;"> <input type="text" name="email" required id="id_email" style="color:black; width:100%" /></td></tr>
+			<br>
+			<tr><td style="vertical-align: top;">
+			<label for="id_message"><p class="lead text-light">Message:&nbsp;&nbsp;&nbsp;</p></label></td><td style="vertical-align: top;"><textarea name="message" id="id_message" rows="10" cols="40" required style="color:black" /></textarea></td></tr></table>
+			<br><br>
+			<button class="btn btn-default btn-lg" type="submit" value="Send">Send</button>
+			</form>
                 </div>    
                 
             </div>
         </div>
     </section>     
+
+<section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                	<h2 class="section-header">All messages:</h2><br><br><br><br>
+			{% for message in messages %}
+                	<p class="lead text-muted">
+				<strong>{{message.name}}</strong><br>
+				{{message.subject}}<br><br>
+				{{message.message}}<br>
+				{{message.date}}
+			</p>
+			<br><br><br>
+                	{% endfor %}
+                </div>                
+                
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
