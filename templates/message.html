@@ -1,20 +1,53 @@
 {% extends "base.html" %}
 
-{% block title %}index{% endblock %}
-
+{% block title %}message{% endblock %}
 
 {% block header %}
 
 	<!-- Header -->
-    
-    <header>
-        <div class="header-content">
+<!--    
+    <section class="header">
+	<div class="header-content">
             <div class="header-content-inner">
                 <h1>Send a message!</h1>
                 <p>Send me your comments, thoughts, experiences below.</p>
             </div>
         </div>
-    </header>
-    
+    </section>
+-->
+
+<!-- Intro Section -->
+
+    <section class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+			<br><br><br><br>
+                	<span class="glyphicon glyphicon-envelope" style="font-size: 60px"></span>
+                    <h2 class="section-heading">Send a message!</h2>
+                    <p class="text-light">Send me your comments, thoughts, experiences below.</p>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+{% endblock %}
+
+
+
+{% block content %}
+
+ <section class="content content-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                	<h2 class="section-header">Superior Quality</h2>
+                	<p class="lead text-light">Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
+                	<a href="#" class="btn btn-default btn-lg">Test It</a>
+                </div>    
+                
+            </div>
+        </div>
+    </section>     
 
 {% endblock %}
