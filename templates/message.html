@@ -78,7 +78,12 @@
 			<br>
 			<tr><td style="vertical-align: top;">
 			<label for="id_message"><p class="lead text-light">Message:&nbsp;&nbsp;&nbsp;</p></label></td><td style="vertical-align: top;"><textarea name="message" id="id_message" rows="10" cols="40" required style="color:black" /></textarea></td></tr></table>
-			<br><br>
+			<br>
+			{% if form.errors %}
+        <p class="lead text-light" style="color: red;">
+            Please enter a valid email address.
+        </p>
+    {% endif %}<br>
 			<button class="btn btn-default btn-lg" type="submit" value="Send">Send</button>
 			</form>
                 </div>    

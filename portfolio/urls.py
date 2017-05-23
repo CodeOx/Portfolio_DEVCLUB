@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from portfolio.views import index, message, about_me, contact_form
+from portfolio.views import index, message, about_me, message_thanks
+#from portfolio.views import contact_form
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/$', index, name='index'),
     url(r'^message/$', message, name='message'),
     url(r'^about_me/$', about_me, name='about_me'),
-    url(r'^contact_form/$', contact_form, name='contact_form'),
+    #url(r'^contact_form/$', contact_form, name='contact_form'),
+    url(r'^message/thanks/$', message_thanks, name='message_thanks'),
 ]

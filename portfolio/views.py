@@ -11,7 +11,7 @@ def index(request):
 def about_me(request):
     return render(request, 'about_me.html')
 
-def contact_form(request):
+'''def contact_form(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -19,7 +19,7 @@ def contact_form(request):
             return HttpResponseRedirect('/message/')
     else:
         form = ContactForm()
-    return render(request, 'message.html')
+    return render(request, 'message.html')'''
 
 def message(request):
     if request.method == 'POST':
@@ -28,10 +28,13 @@ def message(request):
             cd = form.cleaned_data
             now = datetime.datetime.now()
             data = details.objects.create(subject=cd['subject'], email=cd['email'], message=cd['message'], name=cd['name'], date=now)  
-            return HttpResponseRedirect('/index/')
+            return HttpResponseRedirect('/message/thanks/')
     else:
         form = ContactForm()
     messages = details.objects.order_by("-date")
-    return render(request, 'message.html', { 'messages': messages })
+    return render(request, 'message.html', { 'messages': messages, 'form': form })
 
+def message_thanks(request):
+    messages = details.objects.order_by("-date")
+    return render(request, 'message_thanks.html', { 'messages': messages })
 

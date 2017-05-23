@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}thanks{% endblock %}
+
+{% block header %}
+
+	<!-- Header -->
+<!--    
+    <section class="header">
+	<div class="header-content">
+            <div class="header-content-inner">
+                <h1>Send a message!</h1>
+                <p>Send me your comments, thoughts, experiences below.</p>
+            </div>
+        </div>
+    </section>
+-->
+
+<!-- Intro Section -->
+
+    <section class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+			<br><br><br><br>
+                	<span class="glyphicon glyphicon-pencil" style="font-size: 60px"></span>
+                    <h2 class="section-heading">Thanks!</h2>
+                    <p class="text-light"><a href="{% url 'message' %}">Send another message</a></p>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+{% endblock %}
+
+
+
+{% block content %}
+
+ 
+<section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                	<h2 class="section-header">All messages:</h2><br><br><br><br>
+			{% for message in messages %}
+                	<p class="lead text-muted">
+				<strong>{{message.name}}</strong><br>
+			
+				{{message.date}}
+			<br>
+				{{message.subject}}<br><br>
+				{{message.message}}<br>
+				
+			</p>
+			<br><br><br>
+                	{% endfor %}
+                </div>                
+                
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
