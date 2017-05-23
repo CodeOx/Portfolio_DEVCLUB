@@ -11,4 +11,4 @@ class details(models.Model):
     subject = models.CharField(max_length=100)
     email = models.EmailField()
     message = models.CharField(max_length=1000)
-    date = models.DateField(null=True)
+    date = models.DateTimeField(null=True)
